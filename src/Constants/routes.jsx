@@ -1,6 +1,6 @@
-import NotFound from '../Pages'
-import S1 from '../Pages/ReactSession'
-import Dashboard from '../Pages/Dashboard'
+import NotFound from '../Pages/NotFound'
+import S1 from '../Pages/ReactSession/S1'
+import Dashboard from '../Pages/Dashboard/Dashboard'
 
 export default [
   {
