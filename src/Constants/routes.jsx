@@ -5,14 +5,14 @@ import Dashboard from '../Pages/Dashboard/Dashboard'
 export default [
   {
     path: '/',
-    element: Dashboard,    
+    element: Dashboard
   },
   {
     path: '/s1',
-    element: S1,
+    element: S1
   },
   {
     path: '*',
-    element: NotFound,    
-  },
+    element: NotFound
+  }
 ]
