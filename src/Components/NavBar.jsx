@@ -8,7 +8,7 @@ const NavBar = () => {
   return (
     <Navbar data-bs-theme="dark" expand="lg" sticky="top" className="bg-body-tertiary">
       <Container fluid>
-        <Navbar.Brand href="#home">My React Class</Navbar.Brand>
+        <Navbar.Brand href="/">My React Class</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
