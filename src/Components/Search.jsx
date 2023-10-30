@@ -16,7 +16,7 @@ export default function Search(){
   return(
     <>
     <br />
-    <Form style={{margin:"20px"}} className="d-flex">
+    <Form data-bs-theme="dark" style={{margin:"20px"}} className="d-flex">
       <Form.Control
         type="search"
         placeholder="Search"
