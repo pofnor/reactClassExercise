@@ -10,12 +10,11 @@ function App () {
         <Routes>
           {
             routes.map((route, index) => {
-              const Element = route.element
               return (
                 <Route
                   key={index}
                   path={route.path}
-                  element={<Element/>}
+                  element={<route.element/>}
                 />
               )
             })
