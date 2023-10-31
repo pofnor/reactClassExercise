@@ -7,7 +7,7 @@ const SearchItem = ({matchItems}) => {
     {matchItems.map(item => {
       return(
         <li key={item.id}>
-          <div className='searchItem-div'>
+          <div className='primary-container'>
             <Link to={item.link} className='searchItem-link'>
               <div>
                 <h3>{item.title}</h3>
