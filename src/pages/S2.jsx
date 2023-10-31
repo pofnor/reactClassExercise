@@ -1,10 +1,10 @@
 import Exercises from '../components/Exercises'
-import {session1 as exercises} from '../data/sessionDB'
+import {session2 as exercises} from '../data/sessionDB'
 
-const S1 = () => {
+const S2 = () => {
   return (
     <Exercises exercises={exercises}/>
   )
 }
 
-export default S1
+export default S2
