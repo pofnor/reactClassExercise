@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import './SearchItem.css'
+import "../assets/global.css"
 
 const SearchItem = ({matchItems}) => {  
   return (
@@ -7,8 +7,8 @@ const SearchItem = ({matchItems}) => {
     {matchItems.map(item => {
       return(
         <li key={item.id}>
-          <div className='searchItem'>
-            <Link to={item.link} className='link'>
+          <div className='searchItem-div'>
+            <Link to={item.link} className='searchItem-link'>
               <div>
                 <h3>{item.title}</h3>
                 <p>{item.subtitle}</p>

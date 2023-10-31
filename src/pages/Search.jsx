@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Form from 'react-bootstrap/Form';
-import searchDB from '../Constants/searchDB';
-import SearchItem from "./SearchItem";
+import searchDB from "../data/searchDB"
+import SearchItem from "../components/SearchItem";
 
 export default function Search(){
   const [searchItem,setSearchItem] = useState('')

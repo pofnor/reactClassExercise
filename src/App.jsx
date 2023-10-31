@@ -1,6 +1,6 @@
-import NavBar from './Components/NavBar'
+import NavBar from './components/NavBar'
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom'
-import routes from './Constants/routes'
+import routes from './data/routes'
 import 'bootstrap/dist/css/bootstrap.css'
 function App () {
   return (

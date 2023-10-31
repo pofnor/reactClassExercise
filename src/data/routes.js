@@ -1,7 +1,7 @@
-import NotFound from '../Pages/NotFound'
-import S1 from '../Pages/ReactSession/S1'
-import Dashboard from '../Pages/Dashboard/Dashboard'
-import Search from '../Components/Search'
+import NotFound from '../pages/NotFound'
+import S1 from '../pages/S1'
+import Dashboard from '../pages/Dashboard'
+import Search from '../pages/Search'
 
 export default [
   {

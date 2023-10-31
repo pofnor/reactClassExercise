@@ -1,9 +1,13 @@
+import { useEffect } from 'react'
 import Container from 'react-bootstrap/Container'
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 import NavDropdown from 'react-bootstrap/NavDropdown'
 
 const NavBar = () => {
+  useEffect(()=>{
+    console.log("NavBar Mount or Update")
+  },[])
   
   return (
     <Navbar data-bs-theme="dark" expand="lg" sticky="top" className="bg-body-tertiary">
