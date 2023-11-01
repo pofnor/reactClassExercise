@@ -1,6 +1,6 @@
 import '../assets/global.css'
 
-const MultipleLine = ({code,isAnswer=false}) => {    
+const MultipleLine = ({code,isAnswer=false}) => {      
   return (
     <>
     {code.map(line=>{      

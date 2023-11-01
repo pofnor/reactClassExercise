@@ -7,7 +7,7 @@ export const session1 = [
   },
   { 
     questionHeader: "Qeustion2 from session1",
-    question: "the question without answer",   
+    question: ["the question without answer"],   
   },
   
 ];
@@ -16,7 +16,7 @@ export const session2 = [
     questionHeader: "22qh1",
     question: ["22q1"],
     answerHeader: "22ah1",
-    answer: ["answer"] 
+    answer: ["The first answer"] 
   },
   { 
     questionHeader: "22qh2",
