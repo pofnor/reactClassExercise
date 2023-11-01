@@ -8,13 +8,13 @@ const DB = [
     id : 2,
     link : '/s2',
     title: 'Session 2',
-    subtitle: '22222222'
+    subtitle: 'two'
   },
   {
     id : 3,
     link : '/s3',
     title: 'Session 3',
-    subtitle: '3333333333'
+    subtitle: 'three'
   },
   {
     id : 4,

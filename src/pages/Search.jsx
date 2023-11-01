@@ -4,13 +4,17 @@ import searchDB from "../data/searchDB"
 import SearchItem from "../components/SearchItem";
 
 export default function Search(){
-  const [searchItem,setSearchItem] = useState('')
+  const [searchItem,setSearchItem] = useState('***')
   const matchItems = searchDB.filter(item => {
     return(
-      item
+      (item
       .subtitle
       .toLowerCase()
-      .includes(searchItem.toLowerCase().trim())
+      .includes(searchItem.toLowerCase().trim()))
+      ||(item
+        .title
+        .toLowerCase()
+        .includes(searchItem.toLowerCase().trim()))      
     )
     })
   return(
