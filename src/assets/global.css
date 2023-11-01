@@ -57,11 +57,13 @@
   letter-spacing: 1px;
   font-family: 'Times New Roman', Times, serif;
   font-size: 24px;
+  margin-bottom: 30px;
 }
 .primary-p{
   color:lightblue;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 14px;
+  margin-top: -12px;
 }
 .color-white{
   color:whitesmoke;
