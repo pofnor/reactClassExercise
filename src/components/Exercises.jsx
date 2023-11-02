@@ -1,11 +1,11 @@
+import React from 'react'
 import Exercise from './Exercise'
 
-const Exercises = ({exercises}) => {  
-  
+const Exercises = ({ exercises }) => {
   return (
     <section>
-      {exercises.map(exercise=>{
-        return(
+      {exercises.map(exercise => {
+        return (
           <Exercise key={exercise.questionHeader + exercise.question}
           questionHeader={exercise.questionHeader}
           question={exercise.question}
@@ -13,9 +13,9 @@ const Exercises = ({exercises}) => {
           answer={exercise.answer}
           />
         )
-      })}      
+      })}
     </section>
-  );
-};
+  )
+}
 
-export default Exercises;
+export default Exercises

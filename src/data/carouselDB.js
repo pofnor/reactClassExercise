@@ -22,4 +22,4 @@ const DB = [
   }
 ]
 
-export default DB;
+export default DB

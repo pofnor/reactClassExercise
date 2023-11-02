@@ -1,3 +1,4 @@
+import React from 'react'
 import { useEffect } from 'react'
 import Container from 'react-bootstrap/Container'
 import Nav from 'react-bootstrap/Nav'
@@ -5,10 +6,10 @@ import Navbar from 'react-bootstrap/Navbar'
 import NavDropdown from 'react-bootstrap/NavDropdown'
 
 const NavBar = () => {
-  useEffect(()=>{
+  useEffect(() => {
     console.log("NavBar Mount or Update,Why the react-bootstrap/Navbar don't use Link ???")
-  },[])
-  
+  }, [])
+
   return (
     <Navbar data-bs-theme="dark" expand="lg" sticky="top" className="bg-body-tertiary">
       <Container fluid>

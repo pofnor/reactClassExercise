@@ -1,7 +1,8 @@
-import Carousel from "react-bootstrap/Carousel";
-import DB from "../data/carouselDB";
-import { Link } from "react-router-dom";
-import "../assets/global.css"
+import React from 'react'
+import Carousel from 'react-bootstrap/Carousel'
+import DB from '../data/carouselDB'
+import { Link } from 'react-router-dom'
+import '../assets/global.css'
 
 const Dashboard = () => {
   return (
@@ -11,9 +12,9 @@ const Dashboard = () => {
           return (
             <Carousel.Item key={carousel.id}>
               <img
-                style={{ width: "100%" }}
+                style={{ width: '100%' }}
                 src={carousel.image}
-                alt={"slide" + carousel.id}
+                alt={'slide' + carousel.id}
               />
               <Carousel.Caption>
                 <h2>{carousel.title}</h2>
@@ -26,11 +27,11 @@ const Dashboard = () => {
                 </Link>
               </Carousel.Caption>
             </Carousel.Item>
-          );
+          )
         })}
       </Carousel>
     </header>
-  );
-};
+  )
+}
 
-export default Dashboard;
+export default Dashboard

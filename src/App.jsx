@@ -1,3 +1,4 @@
+import React from 'react'
 import NavBar from './components/NavBar'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import routes from './data/routes'

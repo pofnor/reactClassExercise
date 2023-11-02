@@ -1,22 +1,23 @@
+import React from 'react'
 import { Link } from 'react-router-dom'
 import '../assets/global.css'
 import Exercise from './Exercise'
 
-const SearchItem = ({matchItems}) => { 
+const SearchItem = ({ matchItems }) => {
   return (
     <>
     {matchItems.map(exercise => {
-      return(        
+      return (
         <Link key={exercise.questionHeader + exercise.question}
-          className="searchItem-link" to={"/s" + exercise.session}>
+          className="searchItem-link" to={'/s' + exercise.session}>
           <Exercise
           questionHeader={exercise.questionHeader}
           question={exercise.question}
           answerHeader={exercise.answerHeader}
           answer={exercise.answer}
           />
-        </Link>        
-      )            
+        </Link>
+      )
     })}
   </>
   )
