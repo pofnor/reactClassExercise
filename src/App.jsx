@@ -1,5 +1,5 @@
 import NavBar from './components/NavBar'
-import { BrowserRouter, Link, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import routes from './data/routes'
 import 'bootstrap/dist/css/bootstrap.css'
 function App () {

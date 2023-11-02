@@ -1,21 +1,21 @@
-import { Link } from "react-router-dom";
-import "../assets/global.css"
+import { Link } from 'react-router-dom'
+import '../assets/global.css'
+import Exercise from './Exercise'
 
-const SearchItem = ({matchItems}) => {  
+const SearchItem = ({matchItems}) => { 
   return (
     <>
-    {matchItems.map(item => {
-      return(
-        <li key={item.id}>
-          <div className='primary-container'>
-            <Link to={item.link} className='searchItem-link'>
-              <div>
-                <h3>{item.title}</h3>
-                <p>{item.subtitle}</p>
-              </div>
-            </Link>
-          </div>
-        </li>
+    {matchItems.map(exercise => {
+      return(        
+        <Link key={exercise.questionHeader + exercise.question}
+          className="searchItem-link" to={"/s" + exercise.session}>
+          <Exercise
+          questionHeader={exercise.questionHeader}
+          question={exercise.question}
+          answerHeader={exercise.answerHeader}
+          answer={exercise.answer}
+          />
+        </Link>        
       )            
     })}
   </>

@@ -1,24 +1,25 @@
-export const session1 = [
+export const sessions = [
   { 
+    session : "1",
     questionHeader: "question Header",
     question: ["This a question"],
     answerHeader: "answer header",
     answer: ["the main answer from session 1"] 
   },
   { 
+    session : "1",
     questionHeader: "Qeustion2 from session1",
     question: ["the question without answer"],   
   },
-  
-];
-export const session2 = [
   { 
+    session : "2",
     questionHeader: "22qh1",
     question: ["22q1"],
     answerHeader: "22ah1",
     answer: ["The first answer"] 
   },
   { 
+    session : "2",
     questionHeader: "22qh2",
     question: ["22q2"],
     answerHeader: "22ah2",

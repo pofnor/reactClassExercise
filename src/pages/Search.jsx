@@ -1,22 +1,36 @@
 import { useState } from "react";
 import Form from 'react-bootstrap/Form';
-import searchDB from "../data/searchDB"
+import {sessions as searchDB} from '../data/sessionDB'
 import SearchItem from "../components/SearchItem";
 
 export default function Search(){
-  const [searchItem,setSearchItem] = useState('***')
+  
+  const [searchItem,setSearchItem] = useState('')
+  
+  function arraySearch(array,searchItem){
+    if(searchItem){
+      let isMatch = false
+      if(array){
+        for(let item of array){
+          if(item.toLowerCase()
+          .includes(searchItem.toLowerCase().trim())){
+            isMatch = true
+          }        
+        }
+        if(isMatch) return true      
+      }
+      return false
+    }
+  }
+  
   const matchItems = searchDB.filter(item => {
     return(
-      (item
-      .subtitle
-      .toLowerCase()
-      .includes(searchItem.toLowerCase().trim()))
-      ||(item
-        .title
-        .toLowerCase()
-        .includes(searchItem.toLowerCase().trim()))      
-    )
+        (arraySearch(item.questionHeader,searchItem))
+      ||(arraySearch(item.question,searchItem))
+      ||(arraySearch(item.answerHeader,searchItem))
+      ||(arraySearch(item.answer,searchItem)))
     })
+
   return(
     <>
     <br />
@@ -34,7 +48,7 @@ export default function Search(){
         <h2 style={{margin:"auto"}}>Results</h2>          
       </div>
       <ul style={{listStyle: "none"}}>        
-        <SearchItem matchItems={matchItems} />          
+        <SearchItem matchItems={matchItems}/>          
       </ul>
       
     </section>
