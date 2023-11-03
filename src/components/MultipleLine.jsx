@@ -5,7 +5,7 @@ const MultipleLine = ({ code, isAnswer = false }) => {
   return (
     <>
     {code.map(line => {
-      return (<p key={line} className={isAnswer ? 'primary-p color-white' : 'primary-p'}>{line}</p>)
+      return (<p key={crypto.randomUUID()} className={isAnswer ? 'primary-p color-white' : 'primary-p'}>{line}</p>)
     })
     }
     </>

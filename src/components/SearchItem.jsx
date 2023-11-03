@@ -8,7 +8,7 @@ const SearchItem = ({ matchItems }) => {
     <>
     {matchItems.map(exercise => {
       return (
-        <Link key={exercise.questionHeader + exercise.question}
+        <Link key={crypto.randomUUID()}
           className="searchItem-link" to={'/s' + exercise.session}>
           <Exercise
           questionHeader={exercise.questionHeader}

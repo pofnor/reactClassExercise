@@ -1,29 +1,54 @@
+/* sample of database
+  {
+    session: '2',
+    questionHeader: 'header',
+    question: ['line1','line2','line3'],
+    answerHeader: 'header',
+    answer: ['line1','line2','line3'],
+  }
+*/
 export const sessions = [
   {
     session: '1',
-    questionHeader: 'question Header',
-    question: ['This a question'],
-    answerHeader: 'answer header',
-    answer: ['the main answer from session 1']
+    questionHeader: 'Idioms',
+    question: ['Tree shaking'],
+    answer: ['Removing unused code'],
   },
   {
     session: '1',
-    questionHeader: 'Qeustion2 from session1',
-    question: ['the question without answer']
+    questionHeader: 'Idioms',
+    question: ['HMR'],
+    answer: ['Hot Module Replacement'],
   },
   {
-    session: '2',
-    questionHeader: '22qh1',
-    question: ['22q1'],
-    answerHeader: '22ah1',
-    answer: ['The first answer']
+    session: '1',
+    questionHeader: 'The JavaScript module bundler',
+    question: ['webpack', 'Rollup', 'esbuild', 'Turbopack'],
+    answerHeader: 'Use Cases',
+    answer: [
+      '"Create React App" use webpack',
+      'Vite uses Rollup and esbuild under the hood; esbuild is used for pre-bundling while Rollup is used for Vite’s production builds.',
+      'Nextjs use Turbopack',
+      'Turbopack is The Rust-powered successor to Webpack',
+      'The Turbopack team view it as the natural successor to Webpack (it`s built by Vercel team members who originally built Webpack)',
+    ],
   },
   {
-    session: '2',
-    questionHeader: '22qh2',
-    question: ['22q2'],
-    answerHeader: '22ah2',
-    answer: ['is simply dummy text', 'of the printing and typesetting industry', "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."]
-  }
-
-]
+    session: '1',
+    questionHeader: 'JavaScript modules',
+    question: ['CommonJS', 'ES(ECMAScript) modules'],
+    answer: [
+      'at CommonJS, the entire tool or library must be imported :',
+      '💻',
+      'const utils = require("./utils");',
+      'const query = "Rollup";',
+      'utils.ajax(`https://api.example.com?search=${query}`).then(handleResponse);',
+      '---------------------------------------------------------------------------',
+      'at ES modules, instead of importing the whole object, we can just import the one function we need :',
+      '💻',
+      'import { ajax } from "./utils";',
+      'const query = "Rollup";',
+      'ajax(`https://api.example.com?search=${query}`).then(handleResponse);'
+    ],
+  },
+];

@@ -6,7 +6,7 @@ const Exercises = ({ exercises }) => {
     <section>
       {exercises.map(exercise => {
         return (
-          <Exercise key={exercise.questionHeader + exercise.question}
+          <Exercise key={crypto.randomUUID()}
           questionHeader={exercise.questionHeader}
           question={exercise.question}
           answerHeader={exercise.answerHeader}
