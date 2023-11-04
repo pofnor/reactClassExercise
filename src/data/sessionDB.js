@@ -9,6 +9,25 @@
 */
 export const sessions = [
   {
+    session: '3',
+    questionHeader: 'TEMP Reminder',
+    question: ['Store','Broadcasting from top to bottom','Redux','Redux/dispatch','React/dispatch','Context'],
+  },
+  {
+    session: '2',
+    questionHeader: 'React Router Dom',
+    question: ['line1','line2','line3'],
+    answerHeader: 'header',
+    answer: ['💻 (App.js)','line1','line2','line3'],
+  },
+  {
+    session: '2',
+    questionHeader: 'Babel',
+    question: ['what is Babel?'],
+    answer: ['Put in next-gen JavaScript and Get browser-compatible Javascript out',
+      'because of this, in older version of react , use the import react'],
+  },
+  {
     session: '1',
     questionHeader: 'Class Component re-renders',
     question: ['React.Component','React.PureComponent'],
@@ -64,7 +83,7 @@ export const sessions = [
     ],
   },
   {
-    session: '1',
+    session: '2',
     questionHeader: 'JavaScript modules',
     question: ['CommonJS', 'ES(ECMAScript) modules'],
     answer: [
