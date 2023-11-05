@@ -90,14 +90,12 @@ export const sessions = [
       'at CommonJS, the entire tool or library must be imported :',
       '💻',
       'const utils = require("./utils");',
-      'const query = "Rollup";',
-      'utils.ajax(`https://api.example.com?search=${query}`).then(handleResponse);',
+      'utils.ajax("https://api.example.com?search=$query").then(handleResponse);',
       '---------------------------------------------------------------------------',
       'at ES modules, instead of importing the whole object, we can just import the one function we need :',
       '💻',
       'import { ajax } from "./utils";',
-      'const query = "Rollup";',
-      'ajax(`https://api.example.com?search=${query}`).then(handleResponse);'
+      'ajax("https://api.example.com?search=$query").then(handleResponse);'
     ]
   },
   {

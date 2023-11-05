@@ -40,7 +40,7 @@ const NavBar = () => {
             <Nav.Link href="/search">Search</Nav.Link>
             <NavDropdown title="Session" id="basic-nav-dropdown">
               {Links.map(link => {
-                return (<NavDropdown.Item href={link.href}>{link.linkname}</NavDropdown.Item>)
+                return (<NavDropdown.Item key={crypto.randomUUID()} href={link.href}>{link.linkname}</NavDropdown.Item>)
               })}
               {/* <NavDropdown.Divider />
               <NavDropdown.Item href="#action/3.4">

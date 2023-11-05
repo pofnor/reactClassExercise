@@ -1,9 +1,11 @@
 module.exports = {
   env: {
     es2021: true,
-    node: true
+    node: true,
+    browser: true    
   },
   extends: [
+    'standard',
     'eslint:recommended',
     'plugin:react/recommended'
   ],
@@ -16,7 +18,8 @@ module.exports = {
         '.eslintrc.{js,cjs}'
       ],
       parserOptions: {
-        sourceType: 'script'
+        ecmaVersion: 'latest',
+        sourceType: 'module'
       }
     }
   ],
