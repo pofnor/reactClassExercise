@@ -4,7 +4,7 @@ module.exports = {
     node: true
   },
   extends: [
-    'standard',
+    'eslint:recommended',
     'plugin:react/recommended'
   ],
   overrides: [
@@ -27,6 +27,14 @@ module.exports = {
   plugins: [
     'react'
   ],
-  rules: {    
+  rules: {
+    'react/prop-types':'off',
+    'react/react-in-jsx-scope':'off',
+    'react/jsx-uses-react':'off'    
+  },
+  settings:{
+    "react":{
+      "version":"detect"
+    }
   }
 }

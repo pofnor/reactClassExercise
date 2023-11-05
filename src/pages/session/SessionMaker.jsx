@@ -1,4 +1,3 @@
-import React from 'react'
 import Exercises from '../../components/Exercises'
 import { sessions as exercises } from '../../data/sessionDB'
 import { useParams } from 'react-router-dom'

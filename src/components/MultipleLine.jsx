@@ -1,4 +1,3 @@
-import React from 'react'
 import '../assets/global.css'
 
 const MultipleLine = ({ code, isAnswer = false }) => {

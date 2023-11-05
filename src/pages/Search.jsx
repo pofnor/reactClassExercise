@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import Form from 'react-bootstrap/Form'
 import { sessions as searchDB } from '../data/sessionDB'
 import SearchItem from '../components/SearchItem'
