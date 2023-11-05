@@ -1,3 +1,9 @@
+.display-none{
+  display: none;
+}
+.display-block{
+  display: block;
+}
 .carousel-link{
   text-decoration: none;
   color: whitesmoke;
