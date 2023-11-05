@@ -4,7 +4,7 @@
     questionHeader: 'header',
     question: ['line1','line2','line3'],
     answerHeader: 'header',
-    answer: ['💻 (App.js)','line1','line2','line3'],
+    answer: ['💻 (App.js)','🌟Tips:','line2','line3'],
   },
 */
 export const sessions = [
@@ -27,7 +27,7 @@ export const sessions = [
       'useNavigate is hooks and i use it in NotFound.jsx',
       '💻 const navigate=useNavigate()',
       'navigate("URL",options) that the options like Link components like "replace"',
-      'Tips: navigate(-1) can takes negative numbers like -1 that simulate the back button on browser'
+      '🌟Tips: navigate(-1) can takes negative numbers like -1 that simulate the back button on browser'
     ],
   },
   {
@@ -108,8 +108,8 @@ export const sessions = [
       '</>',
       ')',
       '}',
-      'Tips: we can remove path from first Route (path="/books") and just wrap some routes for sharing the code(<BookLayout />) with components',
-      'Tips: can send the object to nesting component with this:',
+      '🌟Tips: we can remove path from first Route (path="/books") and just wrap some routes for sharing the code(<BookLayout />) with components',
+      '🌟Tips: can send the object to nesting component with this:',
       '💻 (BookLayout.js)',
       '<Outlet context={{ key:"value"}} />',
       'and use this value in every nested component like this:',
@@ -147,7 +147,7 @@ export const sessions = [
       '💻',
       'Route path: "/session/:id"',
       'const { id } = useParams()',
-      'Tips about when the two route match:',
+      '🌟Tips about when the two route match:',
       'before the version 6 of react-router-dom , check route from top to bottom, but since we using verion 6, react-router knows to use the Hard Code instead of Dynamic route by id,for example the second route used when we type "/books/new"',
       '💻',
       '<Route path="/books/:id element={<Book />} />"',
