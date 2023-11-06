@@ -4,17 +4,25 @@ import { sessions as searchDB } from '../data/sessionDB'
 import SearchItem from '../components/SearchItem'
 
 export default function Search () {
+  
   const [searchItem, setSearchItem] = useState('')
 
   function arraySearch (array, searchItem) {
     if (searchItem) {
       let isMatch = false
       if (array) {
-        for (const item of array) {
-          if (item.toLowerCase()
-            .includes(searchItem.toLowerCase().trim())) {
-            isMatch = true
+        if(Array.isArray(array)){ //for searching in question & answer
+          for (const item of array) {
+            if (item.toLowerCase()
+              .includes(searchItem.toLowerCase().trim())) {
+              isMatch = true
+            }
           }
+        } else { //for searching in questionHeader & answerHeader
+          if(array.toLowerCase()
+            .includes(searchItem.toLowerCase().trim())) {
+              isMatch = true
+            }
         }
         if (isMatch) return true
       }
