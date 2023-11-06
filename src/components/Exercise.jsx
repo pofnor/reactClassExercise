@@ -6,6 +6,11 @@ const Exercise = (probs) => {
 
   const [showAnswer,setShowAnswer] = useState(false)
 
+  // if from search page, show the answer
+  if(probs.isSearch && !showAnswer){
+    setShowAnswer(true)
+  }
+
   return (
     <article onClick={()=>setShowAnswer(!showAnswer)} className="primary-container">
       {probs.question

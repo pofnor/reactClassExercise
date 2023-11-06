@@ -14,6 +14,7 @@ const SearchItem = ({ matchItems }) => {
           question={exercise.question}
           answerHeader={exercise.answerHeader}
           answer={exercise.answer}
+          isSearch={true} //for showing answer in search page
           />
         </Link>
       )
