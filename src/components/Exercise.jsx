@@ -7,17 +7,17 @@ const Exercise = (probs) => {
   const [showAnswer,setShowAnswer] = useState(false)
 
   // if from search page, show the answer
-  if(probs.isSearch && !showAnswer){
+  if(probs.searchShowAnswer && !showAnswer){
     setShowAnswer(true)
   }
 
   return (
-    <article onClick={()=>setShowAnswer(!showAnswer)} className="primary-container">
+    <article id={probs.question[0]} onClick={()=>setShowAnswer(true)} className="primary-container"> 
       {probs.question
         ? (
         <div className="primary-question">
           <h1 className='primary-h1'>{probs.questionHeader}</h1>
-          <MultipleLine code={probs.question}/>
+          <MultipleLine text={probs.question} code={probs.questionCode}/>
         </div>
           )
         : (<></>)}
@@ -26,7 +26,7 @@ const Exercise = (probs) => {
         ? (
         <div className={showAnswer ? "display-block primary-answer" : "display-none"  }>
           <h1 className='primary-h1 color-lightgray'>{probs.answerHeader}</h1>
-          <MultipleLine isAnswer={true} code={probs.answer}/>
+          <MultipleLine isAnswer={true} text={probs.answer} code={probs.answerCode}/>
       </div>
           )
         : (<></>)}

@@ -8,8 +8,10 @@ const Exercises = ({ exercises }) => {
           <Exercise key={crypto.randomUUID()}
           questionHeader={exercise.questionHeader}
           question={exercise.question}
+          questionCode={exercise.questionCode}
           answerHeader={exercise.answerHeader}
           answer={exercise.answer}
+          answerCode={exercise.answerCode}
           />
         )
       })}

@@ -6,6 +6,7 @@ import SearchItem from '../components/SearchItem'
 export default function Search () {
   
   const [searchItem, setSearchItem] = useState('')
+  const [showAnswer, setShowAnswer] = useState(false)
 
   function arraySearch (array, searchItem) {
     if (searchItem) {
@@ -34,7 +35,9 @@ export default function Search () {
     return (
       (arraySearch(item.questionHeader, searchItem)) ||
       (arraySearch(item.question, searchItem)) ||
+      (arraySearch(item.questionCode, searchItem)) ||
       (arraySearch(item.answerHeader, searchItem)) ||
+      (arraySearch(item.answerCode, searchItem)) ||
       (arraySearch(item.answer, searchItem)))
   })
 
@@ -49,13 +52,19 @@ export default function Search () {
         aria-label="Search"
         onChange={e => { setSearchItem(e.target.value) }}
       />
+      <Form.Check 
+        type="switch"
+        label="Answer"
+        checked={showAnswer}
+        onChange={() => { setShowAnswer(!showAnswer) }}
+      />     
     </Form>
     <section>
       <div style={{ display: 'flex', flexDirection: 'column' }}>
         <h2 style={{ margin: 'auto' }}>Results</h2>
       </div>
       <div>
-        <SearchItem matchItems={matchItems}/>
+        <SearchItem matchItems={matchItems} searchShowAnswer={showAnswer}/>
       </div>
     </section>
     </>
