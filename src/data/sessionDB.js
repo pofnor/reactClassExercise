@@ -258,15 +258,23 @@ export const sessions = [
     session: '3',
     questionHeader: 'TEMP Reminder',
     question: [
+      'Store',      
+      'Why the react-bootstrap/Navbar don`t use Link ???',
+      'problem to link bookmark'
+    ]
+  },
+  {
+    session: '2',
+    questionHeader: 'Topics brief description in class',
+    question: [
       'Store',
       'Broadcasting from top to bottom',
       'Redux',
       'Redux/dispatch',
       'React/dispatch',
-      'Context',
-      'NavBar Mount or Update,Why the react-bootstrap/Navbar don`t use Link ???',
-      'problem to link bookmark'
-    ]
+      'Context'
+    ],
+    answer:['Redux is A Predictable State Container for JS Apps']
   },  
   {
     session: '2',
@@ -348,8 +356,10 @@ export const sessions = [
       'ajax("https://api.example.com?search=$query").then(handleResponse);'
     ],
     answer: [
-      'at CommonJS, the entire tool or library must be imported :',
-      'at ES modules, instead of importing the whole object, we can just import the one function we need :',
+      'at CommonJS, the entire tool or library must be imported',
+      'at ES modules, instead of importing the whole object, we can just import the one function we need',
+      'CommonJS modules load synchronously, meaning that they block the execution of code until the module is fully loaded and executed.',
+      'ES modules load asynchronously by default, making them ideal for modern web applications where non-blocking behavior is crucial for performance. As a result, ESM is a preferred choice for frontend development',
     ]
   },
   {
