@@ -25,9 +25,9 @@ const NavBar = () => {
 
   const Links = totalSession(sessions)
 
-  useEffect(() => {
-    console.log("NavBar Mount or Update,Why the react-bootstrap/Navbar don't use Link ???")
-  }, [])
+  // useEffect(() => {
+  //   console.log("NavBar Mount or Update,Why the react-bootstrap/Navbar don't use Link ???")
+  // }, [])
 
   return (
     <Navbar data-bs-theme="dark" expand="lg" sticky="top" className="bg-body-tertiary">
