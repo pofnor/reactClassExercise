@@ -8,7 +8,18 @@ const SearchItem = ({ matchItems,searchShowAnswer }) => {
     {matchItems.map(exercise => {
       return (
         <Link key={crypto.randomUUID()}
-          className="searchItem-link" to={'/session/' + exercise.session + '#' + exercise?.question }>
+          className="searchItem-link" 
+          to={
+            '/session/' +
+            exercise.session +
+            '#' + 
+            ( exercise?.question?.[0]     ||
+              exercise?.questionHeader    ||
+              exercise?.answerHeader      ||
+              exercise?.answer?.[0]       ||
+              exercise?.questionCode?.[0] ||             
+              exercise?.answerCode?.[0]
+            ) }>
           <Exercise
           questionHeader={exercise.questionHeader}
           question={exercise.question}
