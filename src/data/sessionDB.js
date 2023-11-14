@@ -4,12 +4,25 @@
     questionHeader: 'questionHeader',
     question: ['question-line1','question-line2','question-line3'],
     questionCode:['  questionCode1','questionCode2','questionCode3'],
+    questionImage:'CSS-in-JS.webp',
     answerHeader: 'answerHeader',
     answer: ['💻 (App.js)','🌟Tips:answer','answer-line2','answer-line3'],
-    answerCode:['answerCode1','answerCode2','answerCode3']
+    answerCode:['answerCode1','answerCode2','answerCode3'],
+    answerImage:'CSS-in-JS.webp',
   },
 */
 export const sessions = [
+  {
+    session: '4',
+    questionHeader: 'questionHeader',
+    question: ['question-line1','question-line2','question-line3'],
+    questionCode:['  questionCode1','questionCode2','questionCode3'],
+    questionImage:'CSS-in-JS.webp',
+    answerHeader: 'answerHeader',
+    answer: ['💻 (App.js)','🌟Tips:answer','answer-line2','answer-line3'],
+    answerCode:['answerCode1','answerCode2','answerCode3'],
+    answerImage:'CSS-in-JS.webp',
+  },
   {
     session: '2',
     questionHeader: 'useSearchParams in React Router Dom',

@@ -40,7 +40,8 @@ const Exercise = (props) => {
       {(props.question || props.questionHeader || props.questionCode)
         && (
         <div className="primary-question">
-          <h1 className='primary-h1'>{props.questionHeader}</h1>
+          {props.questionHeader && <h1 className='primary-h1'>{props.questionHeader}</h1>}
+          {props.questionImage && <img src={"/"+props.questionImage} alt={props.questionImage} />}
           <MultipleLine text={props.question} code={props.questionCode}/>
         </div>
           )
@@ -48,8 +49,9 @@ const Exercise = (props) => {
 
       {(props.answer || props.answerHeader || props.answerCode)
         && (
-        <div className={showAnswer ? "display-block primary-answer" : "display-none"  }>
-          <h1 className='primary-h1 color-lightgray'>{props.answerHeader}</h1>
+        <div className={showAnswer ? "display-block primary-answer" : "display-none" }>
+          {props.answerHeader && <h1 className='primary-h1 color-lightgray'>{props.answerHeader}</h1>}
+          {props.answerImage && <img src={"/"+props.answerImage} alt={props.answerImage} />}
           <MultipleLine isAnswer={true} text={props.answer} code={props.answerCode}/>
       </div>
           )
