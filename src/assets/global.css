@@ -32,6 +32,18 @@ img{
   color:lightgray;
 }
 
+.search-field{
+  display: flex;
+  margin: 80px 50px 0px;
+  width: 90%;
+  gap: 50px;
+}
+.search-description{
+  color:gray;
+  margin: auto;
+  font-size: 14px;
+}
+
 .primary-container:hover{
   width: 81%;     
   border: 1px solid #CD853F;
@@ -106,8 +118,13 @@ img{
 .color-lightgray{
   color:gray;
 }
+.navbar-link{
+  text-decoration: none;
+  margin: auto;
+  color: whitesmoke;
+}
 
-@media screen and (max-width:800px) { 
+@media screen and (max-width:900px) { 
   .primary-h1,.primary-p,.primary-answer-code{
     font-size:10px;
     margin: 2px;
@@ -116,8 +133,14 @@ img{
   .primary-answer-code-label{
     display: none;
   }
+  .search-field{
+    flex-direction: column;
+    gap: 5px;
+  }
   img{
     margin-top: 5px;
   }
-  
+  .search-description{
+    display: none;
+  }  
 }

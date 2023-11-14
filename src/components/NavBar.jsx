@@ -1,11 +1,28 @@
-import { useEffect } from 'react'
-import Container from 'react-bootstrap/Container'
-import Nav from 'react-bootstrap/Nav'
-import Navbar from 'react-bootstrap/Navbar'
-import NavDropdown from 'react-bootstrap/NavDropdown'
-import { sessions } from '../data/sessionDB'
+import { useState } from 'react';
+import { sessions } from '../data/sessionDB';
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import CssBaseline from '@mui/material/CssBaseline';
+import Divider from '@mui/material/Divider';
+import Drawer from '@mui/material/Drawer';
+import IconButton from '@mui/material/IconButton';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemButton from '@mui/material/ListItemButton';
+import MenuIcon from '@mui/icons-material/Menu';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
+import SearchIcon from '@mui/icons-material/Search';
+import HomeIcon from '@mui/icons-material/Home';
+import { Link } from 'react-router-dom';
 
-const NavBar = () => {
+const drawerWidth = 200;
+
+function NavBar(props) {
+  const { window } = props;
+  const [mobileOpen, setMobileOpen] = useState(false);
+
   function totalSession (sessions) {
     const sessionNumbers = []
     for (const i in sessions) {
@@ -16,7 +33,7 @@ const NavBar = () => {
     const result = []
     for (let i = 0; i < totalLink; i++) {
       result.push({
-        href: '/session/' + (i + 1),
+        to: '/session/' + (i + 1),
         linkname: 'Session ' + (i + 1)
       })
     }
@@ -25,33 +42,107 @@ const NavBar = () => {
 
   const Links = totalSession(sessions)
 
-  // useEffect(() => {
-  //   console.log("NavBar Mount or Update,Why the react-bootstrap/Navbar don't use Link ???")
-  // }, [])
+  const handleDrawerToggle = () => {
+    setMobileOpen((prevState) => !prevState);
+  };
+
+  const drawer = (
+    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
+      <Typography variant="h6" sx={{ my: 2 }}>
+        My React Class
+      </Typography>
+      <Divider />
+      <List>
+        <ListItem key='Home' disablePadding>
+          <ListItemButton sx={{ textAlign: 'center' }}>
+            <Link className='navbar-link' to="/">
+              <HomeIcon />
+            </Link>
+          </ListItemButton>        
+        </ListItem>
+        <ListItem key='Search' disablePadding>
+          <ListItemButton sx={{ textAlign: 'center' }}>
+            <Link className='navbar-link' to="/search">
+              <SearchIcon />
+            </Link>
+          </ListItemButton>        
+        </ListItem>
+        {Links.map(link => {
+          return(
+            <ListItem key={link.linkname} disablePadding>
+              <ListItemButton sx={{ textAlign: 'center' }}>
+                <Link className='navbar-link' to={link.to}>{link.linkname}</Link>
+              </ListItemButton>        
+            </ListItem>
+          )
+        })}
+      </List>
+    </Box>
+  );
+
+  const container = window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Navbar data-bs-theme="dark" expand="lg" sticky="top" className="bg-body-tertiary">
-      <Container fluid>
-        <Navbar.Brand href="/">My React Class</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/search">Search</Nav.Link>
-            <NavDropdown title="Session" id="basic-nav-dropdown">
-              {Links.map(link => {
-                return (<NavDropdown.Item key={crypto.randomUUID()} href={link.href}>{link.linkname}</NavDropdown.Item>)
-              })}
-              {/* <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
-              </NavDropdown.Item> */}
-            </NavDropdown>
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
-  )
+    <Box sx={{ display: 'flex' }}>
+      <CssBaseline />
+      <AppBar component="nav">
+        <Toolbar>
+          <IconButton
+            color="inherit"
+            aria-label="open drawer"
+            edge="start"
+            onClick={handleDrawerToggle}
+            sx={{ mr: 2, display: { md: 'none' } }}
+          >
+            <MenuIcon />
+          </IconButton>
+          <Typography
+            variant="h6"
+            component="div"
+            sx={{ flexGrow: 1, display: { xs: 'none', md: 'block' } }}
+          >
+            My React Class
+          </Typography>
+          <Box sx={{ display: { xs: 'none', md: 'block' } }}>   
+            <Button key='Home' sx={{ color: '#fff' }}>
+              <Link className='navbar-link' to="/">
+                <HomeIcon />
+              </Link>
+            </Button>
+            <Button key='search' sx={{ color: '#fff' }}>
+              <Link className='navbar-link' to="/search">
+              <SearchIcon/>
+              </Link>
+            </Button>
+            {Links.map(link => {
+              return (
+                <Button key={link.linkname} sx={{ color: '#fff' }}>
+                  <Link className='navbar-link' to={link.to}>{link.linkname}</Link>
+                </Button>
+              )
+            })}            
+          </Box>
+        </Toolbar>
+      </AppBar>
+      <nav>
+        <Drawer
+          container={container}
+          variant="temporary"
+          open={mobileOpen}
+          onClose={handleDrawerToggle}
+          ModalProps={{
+            keepMounted: true, // Better open performance on mobile.
+          }}
+          sx={{
+            display: { xs: 'block', md: 'none' },
+            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+          }}
+        >
+          {drawer}
+        </Drawer>
+      </nav>      
+    </Box>
+  );
 }
 
-export default NavBar
+export default NavBar;

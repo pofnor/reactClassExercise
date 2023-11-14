@@ -1,7 +1,7 @@
 import { useState } from 'react'
-import Form from 'react-bootstrap/Form'
 import { sessions as searchDB } from '../data/sessionDB'
 import SearchItem from '../components/SearchItem'
+import { Checkbox, FormControl, FormControlLabel, Switch, TextField } from '@mui/material'
 
 export default function Search () {
   
@@ -42,31 +42,31 @@ export default function Search () {
   })
 
   return (
-    <>
-    <br />
-    <Form data-bs-theme="dark" style={{ margin: '20px' }} className="d-flex">
-      <Form.Control
-        type="search"
-        placeholder="Search"
-        className="me-2"
-        aria-label="Search"
-        onChange={e => { setSearchItem(e.target.value) }}
+  <section>
+    <div className='search-field'>
+      <TextField
+      fullWidth
+      autoComplete='off'     
+      label="Search"
+      onChange={e => { setSearchItem(e.target.value) }}
       />
-      <Form.Check 
-        type="switch"
-        label="Answer"
-        checked={showAnswer}
-        onChange={() => { setShowAnswer(!showAnswer) }}
-      />     
-    </Form>
-    <section>
+      <FormControlLabel
+      label="Answer"
+      labelPlacement="end"
+      control={<Switch />}
+      checked={showAnswer}
+      onChange={() => { setShowAnswer(!showAnswer) }} 
+      />
+    </div>    
+    <article>
       <div style={{ display: 'flex', flexDirection: 'column' }}>
-        <h2 style={{ margin: 'auto' }}>Results</h2>
+        <br />
+        <h6 className='search-description'>This search contain all words that used in question and answer section</h6>
       </div>
       <div>
         <SearchItem matchItems={matchItems} searchShowAnswer={showAnswer}/>
       </div>
-    </section>
-    </>
+    </article>
+  </section>
   )
 }
