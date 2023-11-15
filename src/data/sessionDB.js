@@ -69,38 +69,22 @@ export const sessions = [
       {text:[
         'Popularity: popular.',
         'Usage: Often used in conjunction with other tools or libraries to achieve modular and scoped styles.',
-      ]},
-      {header:['4-Aphrodite:']},
-      {text:[
-        'Popularity: Moderately popular.',
-        'Usage:  Used by those who prefer a lightweight CSS-in-JS solution with a minimal API.',
-      ]},
-      {header:['5-Radium:']},
-      {text:[
-        'Popularity: Moderately popular.',
-        'Usage: Known for its additional features like automatic vendor prefixing and support for pseudo-classes.',
-      ]},
-      {header:['6-JSS (JSS-React):']},
+      ]},      
+      {header:['4-JSS (JSS-React):']},
       {text:[
         'Popularity: Moderate.',
         'Usage: Provides a high degree of customization and is used by developers who value flexibility.',
       ]},
-      {header:['7-Linaria:']},
+      {header:['5-Linaria:']},
       {text:[
         'Popularity: Growing.',
         'Usage: Gaining popularity for its emphasis on zero-runtime overhead and static extraction.',
       ]},
-      {header:['8-Tailwind CSS:']},
+      {header:['6-Tailwind CSS:']},
       {text:[
         'Popularity: Very popular.',
         'Usage: Known for its utility-first approach. Used widely, especially in projects where rapid development and consistent styling are priorities.',
       ]},
-      {header:['9-Material-UI:']},
-      {text:[
-        'Popularity: Very popular.',
-        'Usage: Highly popular for React applications that follow Google`s Material Design guidelines.',
-      ]},
-
     ]
   },
   {
