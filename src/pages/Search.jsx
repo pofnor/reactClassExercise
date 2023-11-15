@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { sessions as searchDB } from '../data/sessionDB'
 import SearchItem from '../components/SearchItem'
-import { Checkbox, FormControl, FormControlLabel, Switch, TextField } from '@mui/material'
+import { FormControlLabel, Switch, TextField } from '@mui/material'
 
 export default function Search () {
   
@@ -12,18 +12,17 @@ export default function Search () {
     if (searchItem) {
       let isMatch = false
       if (array) {
-        if(Array.isArray(array)){ //for searching in question & answer
+        if(Array.isArray(array)){ 
           for (const item of array) {
-            if (item.toLowerCase()
-              .includes(searchItem.toLowerCase().trim())) {
-              isMatch = true
+            for (const obj in item) {
+              if(obj==='image') continue // remove image filename from search
+              for(const data of item[obj])
+                if (data.toLowerCase().includes(searchItem.toLowerCase().trim()))
+                  isMatch = true
             }
           }
-        } else { //for searching in questionHeader & answerHeader
-          if(array.toLowerCase()
-            .includes(searchItem.toLowerCase().trim())) {
-              isMatch = true
-            }
+        } else { 
+          console.log("error, Check sessionDB.js, something is not array")
         }
         if (isMatch) return true
       }
@@ -33,11 +32,7 @@ export default function Search () {
 
   const matchItems = searchDB.filter(item => {
     return (
-      (arraySearch(item.questionHeader, searchItem)) ||
       (arraySearch(item.question, searchItem)) ||
-      (arraySearch(item.questionCode, searchItem)) ||
-      (arraySearch(item.answerHeader, searchItem)) ||
-      (arraySearch(item.answerCode, searchItem)) ||
       (arraySearch(item.answer, searchItem)))
   })
 

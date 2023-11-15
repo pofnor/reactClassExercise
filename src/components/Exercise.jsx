@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
 import '../assets/global.css'
-import MultipleLine from './MultipleLine'
 import { useLocation } from 'react-router-dom'
+import ExerciseMaker from './ExerciseMaker'
 
-const Exercise = (props) => {
+const Exercise = ({question, answer, id, searchShowAnswer}) => {
 
   const [showAnswer,setShowAnswer] = useState(false)
 
@@ -24,38 +24,28 @@ const Exercise = (props) => {
   // ---- scroll to specific Element (End)
 
   // if from search page, show the answer
-  if(props.searchShowAnswer && !showAnswer){
+  if(searchShowAnswer && !showAnswer){
     setShowAnswer(true)
   }
 
   return (    
-    <article id={
-      ( props?.question?.[0]    ||
-        props?.questionHeader   ||
-        props?.answerHeader     ||
-        props?.answer?.[0]      ||
-        props?.questionCode?.[0]||
-        props?.answerCode?.[0]
-      )} onClick={()=>setShowAnswer(true)} className="primary-container">
-      {(props.question || props.questionHeader || props.questionCode)
-        && (
+    <article id={id} onClick={()=>setShowAnswer(true)} className="primary-container">
+      {(question) &&
+        (
         <div className="primary-question">
-          {props.questionHeader && <h1 className='primary-h1'>{props.questionHeader}</h1>}
-          {props.questionImage && <img src={"/"+props.questionImage} alt={props.questionImage} />}
-          <MultipleLine text={props.question} code={props.questionCode}/>
+          {question.map(item => 
+            <ExerciseMaker key={crypto.randomUUID()} item={item} isAnswer={false}/>)}
         </div>
-          )
+        )
       }
-
-      {(props.answer || props.answerHeader || props.answerCode)
-        && (
+      {(answer) &&
+        (
         <div className={showAnswer ? "display-block primary-answer" : "display-none" }>
-          {props.answerHeader && <h1 className='primary-h1 color-lightgray'>{props.answerHeader}</h1>}
-          {props.answerImage && <img src={"/"+props.answerImage} alt={props.answerImage} />}
-          <MultipleLine isAnswer={true} text={props.answer} code={props.answerCode}/>
-      </div>
-          )
-      }
+          {answer.map(item => 
+            <ExerciseMaker key={crypto.randomUUID()} item={item} isAnswer={true}/>)}
+        </div>
+        )
+      }      
     </article>
   )
 }

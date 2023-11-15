@@ -13,22 +13,11 @@ const SearchItem = ({ matchItems,searchShowAnswer }) => {
             '/session/' +
             exercise.session +
             '#' + 
-            ( exercise?.question?.[0]     ||
-              exercise?.questionHeader    ||
-              exercise?.answerHeader      ||
-              exercise?.answer?.[0]       ||
-              exercise?.questionCode?.[0] ||             
-              exercise?.answerCode?.[0]
-            ) }>
-          <Exercise
-          questionHeader={exercise.questionHeader}
-          question={exercise.question}
-          questionCode={exercise.questionCode}
-          questionImage={exercise.questionImage}
-          answerHeader={exercise.answerHeader}
+            exercise.id }>
+          <Exercise          
+          question={exercise.question}          
           answer={exercise.answer}
-          answerCode={exercise.answerCode}
-          answerImage={exercise.answerImage}
+          id={exercise.id}
           searchShowAnswer={searchShowAnswer} //for showing answer in search page
           />
         </Link>
