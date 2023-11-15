@@ -6,7 +6,7 @@ const ExerciseMaker = ({item,isAnswer=false}) => {
     {(item.header) && item.header.map(line => {
       return  (<h1 
                 key={crypto.randomUUID()}
-                className={isAnswer ? 'primary-h1 color-lightgray' : 'primary-h1'}>
+                className={isAnswer ? 'primary-h1 h1-answer' : 'primary-h1'}>
                 {line}
               </h1>)
       })

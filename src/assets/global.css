@@ -1,7 +1,12 @@
+:root{
+  --shadow:#453C67;
+  --answerHeader:#46C2CB;
+
+}
+
 img{
   width: 100%;
   height: auto;  
-  box-shadow: 3px 4px 12px 1px rgba(0, 0, 0, 0.25);
   padding: 10px;
   margin-bottom: 15px;
   margin-top: -15px;
@@ -53,7 +58,7 @@ img{
   margin: auto;    
   border: 1px solid black;
   box-sizing: border-box;
-  box-shadow: 3px 4px 12px 1px rgba(0, 0, 0, 0.25);
+  box-shadow: 1px 2px 12px 1px var(--shadow);
   padding: 30px 20px;    
   margin-top: 50px;    
   transition: 0.4s;
@@ -62,7 +67,7 @@ img{
   width: 95%;
   padding: 30px 20px; 
   margin: 20px auto;
-  background-color: #2b3035;
+  /* background-color: #2b3035; */
 }
 .primary-answer{
   width: 95%;
@@ -84,7 +89,7 @@ img{
   background-color: #454c52;
   border: 1px solid rgb(134, 212, 238,0.4);
   box-sizing: border-box;
-  box-shadow: 3px 4px 12px 1px rgba(0, 0, 0, 0.25);
+  box-shadow: 3px 4px 12px 1px var(--shadow);
 }
 .primary-answer-code-label{
   position: absolute;
@@ -115,8 +120,8 @@ img{
 .color-white{
   color:whitesmoke;
 }
-.color-lightgray{
-  color:gray;
+.h1-answer{
+  color:var(--answerHeader);
 }
 .navbar-link{
   text-decoration: none;

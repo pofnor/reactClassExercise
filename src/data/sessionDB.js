@@ -24,24 +24,83 @@
 
 export const sessions = [
   {
-    session: '4',
+    session: '3',
     id: crypto.randomUUID(),
     question:[
-      {header:['i am header']},
-      {text:['question1','question2']},
-      {code:['questioncode1','questioncode2']},
-      {text:['question3']},
-      {image:['CSS-in-JS.webp']},
-      {code:['questioncode2']}
+      {header:['CSS in JS']},      
+      {image:['CSS-in-JS.webp']},      
     ],
     answer:[
-      {header:['i am header']},
-      {text:['answer1','answer2']},
-      {code:['answercode1']},
-      {text:['answer3','💻 (App.js)']},
-      {image:['CSS-in-JS.webp']},
-      {code:['answercode2']},
-      {text:['🌟Tips:answer']}
+      {text:[
+        'Styling in React initially involved using regular CSS or preprocessor solutions like Sass or LESS.',
+        'But, CSS-in-JS library that allows you to write actual CSS code within your JavaScript files, dynamic styles based on props, and easy theming.',
+      ]},
+      {header:['Libraries:']},
+      {text:[
+        '1-Styled-components',
+        '2-Emotion'
+      ]},
+      {header:['Frameworks:']},
+      {text:[
+        '1-Tailwind CSS',
+        '2-Material-UI',
+      ]},
+      {text:[
+        '🌟Tips: inline styles',
+        'Using inline styles in React involves applying styles directly to JSX elements using the style attribute.',
+        '🌟Cons:',
+        '--No Pseudo-classes or Media Queries',
+        '--Override Difficulties',
+        '--Maintenance Challenges',
+      ]},
+      {text:[
+        'here`s a list of some popular CSS-in-JS libraries and frameworks based on their historical popularity and usage in the React ecosystem:',]},
+      {header:['1-Styled-components:']},
+      {text:[
+        'Popularity: Very popular.',
+        'Usage: Widely used in the React community. Known for its simplicity and ease of use.',
+      ]},
+      {header:['2-Emotion:']},
+      {text:[
+        'Popularity: popular.',
+        'Usage:  Gaining popularity, especially for its performance-focused features.',
+      ]},
+      {header:['3-CSS Modules:']},
+      {text:[
+        'Popularity: popular.',
+        'Usage: Often used in conjunction with other tools or libraries to achieve modular and scoped styles.',
+      ]},
+      {header:['4-Aphrodite:']},
+      {text:[
+        'Popularity: Moderately popular.',
+        'Usage:  Used by those who prefer a lightweight CSS-in-JS solution with a minimal API.',
+      ]},
+      {header:['5-Radium:']},
+      {text:[
+        'Popularity: Moderately popular.',
+        'Usage: Known for its additional features like automatic vendor prefixing and support for pseudo-classes.',
+      ]},
+      {header:['6-JSS (JSS-React):']},
+      {text:[
+        'Popularity: Moderate.',
+        'Usage: Provides a high degree of customization and is used by developers who value flexibility.',
+      ]},
+      {header:['7-Linaria:']},
+      {text:[
+        'Popularity: Growing.',
+        'Usage: Gaining popularity for its emphasis on zero-runtime overhead and static extraction.',
+      ]},
+      {header:['8-Tailwind CSS:']},
+      {text:[
+        'Popularity: Very popular.',
+        'Usage: Known for its utility-first approach. Used widely, especially in projects where rapid development and consistent styling are priorities.',
+      ]},
+      {header:['9-Material-UI:']},
+      {text:[
+        'Popularity: Very popular.',
+        'Usage: Highly popular for React applications that follow Google`s Material Design guidelines.',
+      ]},
+
     ]
   },
   {
@@ -52,7 +111,6 @@ export const sessions = [
       {text:['componentDidMount()', 'componentDidUpdate()']},
     ],
     answer:[
-      {header:['i am header']},
       {text:['💻 (App.js)']},
       {code:[
         'import React from "react";',
@@ -334,7 +392,6 @@ export const sessions = [
       {header:['Outlet Context in React Router Dom']},      
     ],
     answer:[
-      {header:['i am header']},
       {text:[
         'can send the object { key:"value"} to nesting component',
         '💻 (App.js)',
@@ -483,7 +540,6 @@ export const sessions = [
       {text:['Navigate','useNavigate']},
     ],
     answer:[
-      {header:['i am header']},
       {text:[
         '<Navigate to="/"> is the component like Link component and navigate to the link',
         'useNavigate is hooks and i use it in NotFound.jsx',      
