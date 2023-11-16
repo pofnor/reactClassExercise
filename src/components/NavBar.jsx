@@ -67,6 +67,13 @@ function NavBar(props) {
             </Link>
           </ListItemButton>        
         </ListItem>
+        <ListItem key='Lab' disablePadding>
+          <ListItemButton sx={{ textAlign: 'center' }}>
+            <Link className='navbar-link' to="/lab">
+              Lab
+            </Link>
+          </ListItemButton>        
+        </ListItem>
         {Links.map(link => {
           return(
             <ListItem key={link.linkname} disablePadding>
@@ -112,6 +119,11 @@ function NavBar(props) {
             <Button key='search' sx={{ color: '#fff' }}>
               <Link className='navbar-link' to="/search">
               <SearchIcon/>
+              </Link>
+            </Button>
+            <Button key='search' sx={{ color: '#fff' }}>
+              <Link className='navbar-link' to="/lab">
+              Lab
               </Link>
             </Button>
             {Links.map(link => {
